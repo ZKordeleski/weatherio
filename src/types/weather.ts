@@ -9,9 +9,9 @@ export interface WeatherData {
     days: DayWeather[];
     currentConditions?: CurrentConditions;
     alerts?: Alert[];
-  }
-  
-  export interface DayWeather {
+}
+
+export interface DayWeather {
     datetime: string;
     datetimeEpoch: number;
     temp: number;
@@ -34,9 +34,9 @@ export interface WeatherData {
     sunset?: string;
     moonphase?: number;
     hours?: HourWeather[];
-  }
-  
-  export interface HourWeather {
+}
+
+export interface HourWeather {
     datetime: string;
     datetimeEpoch: number;
     temp: number;
@@ -52,9 +52,9 @@ export interface WeatherData {
     uvindex: number;
     conditions: string;
     icon: string;
-  }
-  
-  export interface CurrentConditions {
+}
+
+export interface CurrentConditions {
     datetime: string;
     datetimeEpoch: number;
     temp: number;
@@ -70,9 +70,9 @@ export interface WeatherData {
     uvindex: number;
     conditions: string;
     icon: string;
-  }
-  
-  export interface Alert {
+}
+
+export interface Alert {
     event: string;
     description: string;
-  }
+}

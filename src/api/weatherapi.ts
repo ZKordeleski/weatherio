@@ -1,11 +1,7 @@
+import type { WeatherData } from "../types/weather";
+
 const API_KEY = import.meta.env.VITE_VISUALCROSSING_API_KEY || '';
 const BASE_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline';
-
-// Define basic interface for API response
-export interface WeatherResponse {
-  // We'll flesh this out as we use the API
-  [key: string]: any;
-}
 
 /**
  * Fetches weather forecast for a specific location and date range
@@ -14,12 +10,13 @@ export interface WeatherResponse {
  * @param endDate Optional end date (format: YYYY-MM-DD)
  * @param options Additional API options
  */
+
 export async function getWeatherForecast(
   location: string,
   startDate?: string,
   endDate?: string,
   options: Record<string, string> = {}
-): Promise<WeatherResponse> {
+): Promise<WeatherData> {
   let url = `${BASE_URL}/${encodeURIComponent(location)}`;
   
   // Add date range if provided
@@ -31,7 +28,7 @@ export async function getWeatherForecast(
   
   // Add query parameters
   const params = new URLSearchParams({
-    unitGroup: 'us', // Default to US units (°F)
+    unitGroup: 'us', // (°F)
     include: 'days,hours,current',
     contentType: 'json',
     key: API_KEY,
