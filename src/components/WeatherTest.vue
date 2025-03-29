@@ -4,14 +4,15 @@ import { getWeatherForecast } from '../api/weatherapi';
 import type { WeatherData } from '../types/weather';
 import DaySelector from './DaySelector.vue';
 import TimeOfDaySelector from './TimeOfDaySelector.vue';
+import { type DayOfWeek, type TimeOfDay } from '../types/selectors';
 
 const weatherData = ref<WeatherData | null>(null);
 const isLoading = ref(false);
 const error = ref<string | null>(null);
 const location = ref('Reston, VA');
 
-const selectedDay = ref(5);
-const selectedTimeOfDay = ref('afternoon');
+const selectedDay = ref<DayOfWeek>(5);
+const selectedTimeOfDay = ref<TimeOfDay>('afternoon');
 
 const fetchWeatherData = async () => {
   isLoading.value = true;
