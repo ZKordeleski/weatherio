@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { TIME_RANGES, type TimeOfDay } from '../types/selectors';
+
 
 interface Props {
     modelValue: string;
@@ -7,19 +9,14 @@ interface Props {
 const props = defineProps<Props>();
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: string): void;
+  (e: 'update:modelValue', value: TimeOfDay): void;
 }>();
-
-const timeRanges = [
-  { value: 'morning', label: 'Morning (8am-12pm)' },
-  { value: 'afternoon', label: 'Afternoon (12pm-5pm)' },
-  { value: 'evening', label: 'Evening (5pm-9pm)' }
-];
 
 function selectRange(event: Event) {
   const select = event.target as HTMLSelectElement;
-  emit('update:modelValue', select.value);
+  emit('update:modelValue', select.value as TimeOfDay);
 };
+
 </script>
 
 <template>
@@ -32,7 +29,7 @@ function selectRange(event: Event) {
       class="time-dropdown"
     >
       <option 
-        v-for="time in timeRanges" 
+        v-for="time in TIME_RANGES" 
         :key="time.value" 
         :value="time.value"
       >

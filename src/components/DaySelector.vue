@@ -1,22 +1,22 @@
 <script setup lang="ts">
+import { DAYS_OF_WEEK, type DayOfWeek } from '../types/selectors';
+
 
 interface Props {
-    modelValue: number,
+    modelValue: DayOfWeek,
 }
 
 const props = defineProps<Props>();
 
 interface Emits {
-    (e: 'update:modelValue', value: number): void
+    (e: 'update:modelValue', value: DayOfWeek): void
 }
 
 const emit = defineEmits<Emits>();
 
-const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
 function selectDay(event: Event) {
     const select = event.target as HTMLSelectElement;
-    emit('update:modelValue', parseInt(select.value));
+    emit('update:modelValue', parseInt(select.value) as DayOfWeek);
 }
 
 </script>
@@ -30,7 +30,7 @@ function selectDay(event: Event) {
       class="day-dropdown"
     >
       <option 
-        v-for="(day, index) in daysOfWeek" 
+        v-for="(day, index) in DAYS_OF_WEEK" 
         :key="index" 
         :value="index"
       >

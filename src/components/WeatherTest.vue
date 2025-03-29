@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue';
 import { getWeatherForecast } from '../api/weatherapi';
 import type { WeatherData } from '../types/weather';
 import DaySelector from './DaySelector.vue';
+import TimeOfDaySelector from './TimeOfDaySelector.vue';
 
 const weatherData = ref<WeatherData | null>(null);
 const isLoading = ref(false);
@@ -10,6 +11,7 @@ const error = ref<string | null>(null);
 const location = ref('Reston, VA');
 
 const selectedDay = ref(5);
+const selectedTimeOfDay = ref('afternoon');
 
 const fetchWeatherData = async () => {
   isLoading.value = true;
@@ -38,6 +40,7 @@ onMounted(fetchWeatherData);
   <div class="weather-test">
     <h1>Weather API Test</h1>
     <DaySelector v-model="selectedDay"/>
+    <TimeOfDaySelector v-model="selectedTimeOfDay" />
     
     <form @submit.prevent="handleSubmit">
       <label for="location">Location:</label>
