@@ -17,7 +17,7 @@ const fetchWeatherData = async () => {
     weatherData.value = data;
     console.log('Weather data:', data);
   } catch (err) {
-    error.value = err instanceof Error ? err.message : 'Unknown error occurred';
+    error.value = err instanceof Error ? err.message : 'Yall got got. RIP.';
   } finally {
     isLoading.value = false;
   }
