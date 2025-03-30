@@ -136,7 +136,7 @@ const isNextWeekSuitable = computed(() => {
   const precipProb = nextWeekConditions.value.precipProb;
   const humidity = nextWeekConditions.value.humidity;
   
-  // TODO: Rethink suitability criteria -- stubs for now.
+  // TODO: Rethink suitability criteria -- stubs for now. CLE has different criteria than SF :P
   return temp >= 60 && temp <= 75 && precipProb < 30 && humidity >= 25 && humidity <= 75;
 });
   
