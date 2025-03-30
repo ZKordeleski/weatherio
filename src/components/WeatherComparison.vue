@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue';
-import { getMockWeatherForecast } from '../api/weatherapi';
+import { getMockWeatherForecast, getWeatherForecast } from '../api/weatherapi';
 import { type DayOfWeek, type TimeOfDay, DAYS_OF_WEEK, TIME_RANGES } from '../types/selectors';
 import type { DayWeather, WeatherData } from '../types/weather';
 import LocationSelector from './LocationSelector.vue';
