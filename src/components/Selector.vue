@@ -55,7 +55,7 @@ function handleSelect(event: Event) {
   align-items: center;
   
   .icon {
-    margin-right: 0.5rem;
+    // margin-right: 0.5rem;
     color: #666;
   }
   

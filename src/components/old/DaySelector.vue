@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DAYS_OF_WEEK, type DayOfWeek } from '../types/selectors';
+import { DAYS_OF_WEEK, type DayOfWeek } from '../../types/selectors';
 
 interface Props {
     modelValue: DayOfWeek,

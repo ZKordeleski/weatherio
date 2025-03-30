@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 import { getWeatherForecast } from '../api/weatherapi';
 import type { WeatherData } from '../types/weather';
 import DaySelector from './DaySelector.vue';
-import TimeOfDaySelector from './TimeOfDaySelector.vue';
+import TimeOfDaySelector from './old/TimeOfDaySelector.vue';
 import { type DayOfWeek, type TimeOfDay } from '../types/selectors';
 
 // NOTE: Keeping this vestigial component in case we want it for testing again at some point.

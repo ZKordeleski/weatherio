@@ -3,11 +3,9 @@ import { computed, ref, watch } from 'vue';
 import { getMockWeatherForecast } from '../api/weatherapi';
 import { type DayOfWeek, type TimeOfDay, DAYS_OF_WEEK, TIME_RANGES } from '../types/selectors';
 import type { DayWeather, WeatherData } from '../types/weather';
-import DaySelector from './DaySelector.vue';
 import LocationSelector from './LocationSelector.vue';
-import TimeOfDaySelector from './TimeOfDaySelector.vue';
-import WeatherCard from './WeatherCard.vue';
 import Selector from './Selector.vue';
+import WeatherCard from './WeatherCard.vue';
   
 const weatherData = ref<WeatherData | null>(null);
 const isLoading = ref(false);
@@ -242,7 +240,9 @@ fetchWeatherData();
   align-items: flex-start;
   gap: 15px;
   margin-bottom: 20px;
+  padding-bottom: 10px;
   width: 100%;
+  border-bottom: 2px solid #1a1a1a;
   
   .time-selectors {
     display: flex;
@@ -252,7 +252,6 @@ fetchWeatherData();
     
     @media (min-width: 350px) {
       flex-direction: row;
-      gap: 15px;
     }
   }
   
@@ -260,7 +259,6 @@ fetchWeatherData();
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    gap: 20px;
     
     .time-selectors {
       flex-direction: row;

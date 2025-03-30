@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TIME_RANGES, type TimeOfDay } from '../types/selectors';
+import { TIME_RANGES, type TimeOfDay } from '../../types/selectors';
 
 // TODO: Consolidate selectors.
 

@@ -47,7 +47,7 @@ function handleKeyDown(event: KeyboardEvent) {
   align-items: center;
   
   .location-icon {
-    margin-right: 0.5rem;
+    // margin-right: 0.5rem;
     font-size: 1.5rem;
     color: #666;
   }
