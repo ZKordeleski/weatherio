@@ -157,7 +157,8 @@ function updateChart() {
           },
           ticks: {
             font: {
-              size: 10
+              size: 12,
+              family: 'sans-serif'
             }
           }
         },
@@ -242,8 +243,8 @@ onUnmounted(() => {
   }
   
   .time-label {
+    font-family: sans-serif;
     text-align: center;
-    font-size: 0.7rem;
     color: #666;
     padding: 5px 0;
     margin-top: 10px;

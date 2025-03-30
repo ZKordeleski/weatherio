@@ -12,7 +12,7 @@ import WeatherComparison from './components/WeatherComparison.vue';
 <style>
 /**TODO: Make styles file and generalize stuff for quick editing. */
 body {
-  font-family: monospace, sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
 }

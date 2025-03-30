@@ -49,7 +49,7 @@ function handleKeyDown(event: KeyboardEvent) {
   
   .location-icon {
     margin-right: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #666;
   }
   
@@ -57,10 +57,11 @@ function handleKeyDown(event: KeyboardEvent) {
     padding: 0.5rem;
     border: none;
     border-radius: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     background-color: transparent;
     min-width: 150px;
+    font-family: sans-serif;
     
     &:focus {
       outline: none;

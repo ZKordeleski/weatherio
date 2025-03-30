@@ -7,6 +7,7 @@ import DaySelector from './DaySelector.vue';
 import LocationSelector from './LocationSelector.vue';
 import TimeOfDaySelector from './TimeOfDaySelector.vue';
 import WeatherCard from './WeatherCard.vue';
+import Selector from './Selector.vue';
   
 const weatherData = ref<WeatherData | null>(null);
 const isLoading = ref(false);
@@ -77,6 +78,16 @@ const nextWeekDay = computed<DayWeather | null>(() => {
   
   return null;
 });
+
+const dayOptions = DAYS_OF_WEEK.map((day, index) => ({
+  value: index,
+  label: day
+}));
+
+const timeOptions = TIME_RANGES.map(time => ({
+  value: time.value,
+  label: time.label
+}));
   
 function getConditionsForTimeRange(day: DayWeather | null) {
   if (!day || !day.hours || !selectedTimeRange.value) return null;
@@ -152,8 +163,19 @@ fetchWeatherData();
       />
       
       <div class="time-selectors">
-        <DaySelector v-model="selectedDay" />
-        <TimeOfDaySelector v-model="selectedTimeOfDay" />
+        <Selector
+          v-model="selectedDay"
+          :options="dayOptions"
+          icon="access_time"
+          id="day-select"
+          prefix="Every "
+        />
+        
+        <Selector
+          v-model="selectedTimeOfDay"
+          :options="timeOptions"
+          id="time-select"
+        />
       </div>
     </div>
     
@@ -228,17 +250,16 @@ fetchWeatherData();
     width: 100%;
     gap: 10px;
     
-    @media (min-width: 480px) {
+    @media (min-width: 350px) {
       flex-direction: row;
       gap: 15px;
     }
   }
   
-  @media (min-width: 768px) {
+  @media (min-width: 650px) {
     flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 20px;
     
     .time-selectors {

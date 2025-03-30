@@ -115,7 +115,6 @@ const getWeatherCondition = computed(() => {
 </template>
 
 <style scoped lang="scss">
-/* Import the outlined Material Icons at component level to ensure they're available */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
 
 .weather-card {
@@ -131,9 +130,11 @@ const getWeatherCondition = computed(() => {
   
   .card-title {
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
     
     @media (min-width: 768px) {
       font-size: 1.5rem;
