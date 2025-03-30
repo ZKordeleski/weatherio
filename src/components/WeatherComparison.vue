@@ -140,11 +140,6 @@ const isNextWeekSuitable = computed(() => {
   return temp >= 60 && temp <= 75 && precipProb < 30 && humidity >= 25 && humidity <= 75;
 });
   
-// Refetch on change.
-watch([selectedDay, selectedTimeOfDay], () => {
-  fetchWeatherData();
-}, { deep: true });
-  
 fetchWeatherData();
 </script>
 
