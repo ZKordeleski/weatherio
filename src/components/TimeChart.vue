@@ -248,10 +248,7 @@ onUnmounted(() => {
     color: #666;
     padding: 5px 0;
     margin-top: 10px;
-    
-    @media (min-width: 768px) {
-      font-size: 0.8rem;
-    }
+    font-size: 0.8rem;
   }
 }
 </style>

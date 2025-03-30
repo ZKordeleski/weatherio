@@ -175,23 +175,15 @@ const getWeatherCondition = computed(() => {
       }
       
       .wind.small, .precip.small {
-        font-size: 0.7rem;
+        font-size: .9rem;
         margin: 0;
         display: flex;
         align-items: center;
         line-height: 1; // Needed for centering with icons.
         
         .detail-icon {
-          font-size: 0.9rem;
+          font-size: 1.2rem;
           margin-right: 4px;
-        }
-        
-        @media (min-width: 768px) {
-          font-size: 0.8rem;
-          
-          .detail-icon {
-            font-size: 1rem;
-          }
         }
       }
     }

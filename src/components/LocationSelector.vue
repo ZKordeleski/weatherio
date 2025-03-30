@@ -43,7 +43,6 @@ function handleKeyDown(event: KeyboardEvent) {
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
 
 .location-selector {
-  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   

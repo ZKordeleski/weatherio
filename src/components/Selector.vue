@@ -53,11 +53,9 @@ function handleSelect(event: Event) {
 .selector {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
   
   .icon {
     margin-right: 0.5rem;
-    font-size: 1.2rem;
     color: #666;
   }
   
