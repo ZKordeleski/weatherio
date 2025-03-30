@@ -25,6 +25,7 @@ interface Props {
 
 const props = defineProps<Props>();
 
+// TODO: Use this pattern for other metrics instead of rounding in template.
 const getWindSpeed = computed(() => {
   if (!props.dayData) return '';
   return Math.round(props.dayData.windspeed).toString();
@@ -97,7 +98,7 @@ const getWeatherCondition = computed(() => {
         <!-- Precipitation information with icon -->
         <p class="precip small">
           <span class="material-icons-outlined detail-icon icon">water_drop</span>
-          {{ hasRain ? conditions.precipProb + '% chance rain' : 'no rain' }}
+          {{ hasRain ? Math.round(conditions.precipProb) + '% chance rain' : 'no rain' }}
         </p>
       </div>
     </div>

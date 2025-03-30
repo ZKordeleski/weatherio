@@ -10,7 +10,7 @@ import WeatherCard from './WeatherCard.vue';
 const weatherData = ref<WeatherData | null>(null);
 const isLoading = ref(false);
 const error = ref<string | null>(null);
-const location = ref('Dolores Park, SF');
+const location = ref('Cleveland, OH');
 
 
 const selectedDay = ref<DayOfWeek>(5); // Default to Friday
