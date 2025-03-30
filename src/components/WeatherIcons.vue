@@ -17,18 +17,7 @@ function getIconName() {
       conditionLower.includes('clear')) {
     return 'wb_sunny';
   }
-  
-  // Partly cloudy
-  if (conditionLower.includes('partly') && conditionLower.includes('cloud')) {
-    return 'partly_cloudy_day';
-  }
-  
-  // Cloudy/Overcast
-  if (conditionLower.includes('cloud') || 
-      conditionLower.includes('overcast')) {
-    return 'cloud';
-  }
-  
+
   // Rainy
   if (conditionLower.includes('rain') || 
       conditionLower.includes('shower') || 
@@ -47,7 +36,18 @@ function getIconName() {
   if (conditionLower.includes('thunder') || 
       conditionLower.includes('storm') || 
       conditionLower.includes('lightning')) {
-    return 'flash_on';
+    return 'thunderstorm';
+  }
+
+  // Partly cloudy
+  if (conditionLower.includes('partially') && conditionLower.includes('cloud')) {
+    return 'partly_cloudy_day';
+  }
+  
+  // Cloudy/Overcast
+  if (conditionLower.includes('cloud') || 
+      conditionLower.includes('overcast')) {
+    return 'cloud';
   }
   
   // Default
@@ -58,14 +58,14 @@ function getIconName() {
 <template>
   <div class="weather-icon" :style="{ width: `${iconSize}px`, height: `${iconSize}px` }">
     <span 
-      class="material-icons-outlined icon" 
+      class="material-symbols-outlined icon" 
       :style="{ fontSize: `${iconSize}px` }"
     >{{ getIconName() }}</span>
   </div>
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+@import url('https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined');
 
 .weather-icon {
   display: flex;

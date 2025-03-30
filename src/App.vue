@@ -3,7 +3,7 @@ import WeatherComparison from './components/WeatherComparison.vue';
 </script>
 
 <template>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
   <div class="app">
     <WeatherComparison />
   </div>

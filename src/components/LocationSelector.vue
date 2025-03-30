@@ -59,7 +59,7 @@ function handleKeyDown(event: KeyboardEvent) {
     font-size: 1.2rem;
     font-weight: 500;
     background-color: transparent;
-    min-width: 150px;
+    min-width: 250px;
     font-family: sans-serif;
     
     &:focus {
