@@ -144,6 +144,7 @@ const getWeatherCondition = computed(() => {
   .weather-overview {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     
     .weather-details {
@@ -177,6 +178,7 @@ const getWeatherCondition = computed(() => {
         margin: 0;
         display: flex;
         align-items: center;
+        line-height: 1; // Needed for centering with icons.
         
         .detail-icon {
           font-size: 0.9rem;
