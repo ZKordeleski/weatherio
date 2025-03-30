@@ -3,6 +3,7 @@ import { ref, onMounted, watch, onUnmounted } from 'vue';
 import type { HourWeather } from '../types/weather';
 import { Chart, registerables } from 'chart.js';
 
+// TODO: If you shrink the chart down to basically 0, and size up, it struggles.
 Chart.register(...registerables);
 
 interface Props {
