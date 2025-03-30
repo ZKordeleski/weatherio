@@ -52,7 +52,7 @@ const hasRain = computed(() => {
   return props.conditions.precipProb > 0;
 });
 
-// TODO: Use vue inline dy namic style tag?
+// TODO: Use vue inline dynamic style tag?
 // Determine color of title text based on "This" or "Next"
 const getTitleColor = computed(() => {
   return props.title.toLowerCase() === 'this' ? '#ff6b6b' : '#333'; // TODO: Orange contrast ratio is low. 2.77.
@@ -123,12 +123,10 @@ const getWeatherCondition = computed(() => {
   max-height: 600px;
   padding: 15px;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   
   &.suitable {
-    border-left: 3px solid #4caf50;
+    border: 3px solid #4caf50; // TODO: I think an icon in the top right could be nice? Little check?
   }
   
   .card-title {
@@ -136,7 +134,6 @@ const getWeatherCondition = computed(() => {
     font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 15px;
-    font-weight: normal;
     
     @media (min-width: 768px) {
       font-size: 1.5rem;
@@ -148,16 +145,17 @@ const getWeatherCondition = computed(() => {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 20px;
     
     .weather-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
       margin-left: 15px;
       min-width: 0; // Allow text to wrap
       
       .condition-temp.body {
         font-size: 1.1rem;
-        margin-bottom: 0.25rem;
-        margin-top: 0;
+        margin: 0;
         white-space: nowrap;
         
         span {
@@ -176,8 +174,7 @@ const getWeatherCondition = computed(() => {
       
       .wind.small, .precip.small {
         font-size: 0.7rem;
-        margin-bottom: 0.25rem;
-        margin-top: 0;
+        margin: 0;
         display: flex;
         align-items: center;
         
