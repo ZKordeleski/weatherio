@@ -6,6 +6,8 @@ import DaySelector from './DaySelector.vue';
 import TimeOfDaySelector from './TimeOfDaySelector.vue';
 import { type DayOfWeek, type TimeOfDay } from '../types/selectors';
 
+// NOTE: Keeping this vestigial component in case we want it for testing again at some point.
+
 const weatherData = ref<WeatherData | null>(null);
 const isLoading = ref(false);
 const error = ref<string | null>(null);
@@ -14,7 +16,7 @@ const location = ref('Reston, VA');
 const selectedDay = ref<DayOfWeek>(5);
 const selectedTimeOfDay = ref<TimeOfDay>('afternoon');
 
-const fetchWeatherData = async () => {
+async function fetchWeatherData() {
   isLoading.value = true;
   error.value = null;
   
@@ -29,7 +31,7 @@ const fetchWeatherData = async () => {
   }
 };
 
-const handleSubmit = () => {
+function handleSubmit() {
   fetchWeatherData();
 };
 

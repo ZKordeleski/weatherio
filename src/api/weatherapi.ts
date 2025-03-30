@@ -1,4 +1,5 @@
 import type { WeatherData } from "../types/weather";
+import MOCK_DATA from "./mockData.json";
 
 const API_KEY = import.meta.env.VITE_VISUALCROSSING_API_KEY || '';
 const BASE_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline';
@@ -11,6 +12,7 @@ const BASE_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/r
  * @param options Additional API options
  */
 
+// NOTE: We're grabbing A LOT of stuff and will eat up our call limits quickly.
 export async function getWeatherForecast(
   location: string,
   startDate?: string,
@@ -50,4 +52,17 @@ export async function getWeatherForecast(
     console.error('Error fetching weather data:', error);
     throw error;
   }
+}
+
+// TODO: Cleanup API calls to only necessary info. Mock data for testing :)
+export async function getMockWeatherForecast(
+  location: string,
+  startDate?: string,
+  endDate?: string,
+  options: Record<string, string> = {}
+): Promise<WeatherData> {
+
+  await new Promise(resolve => setTimeout(resolve, 500));
+  
+  return MOCK_DATA;
 }

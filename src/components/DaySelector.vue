@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { DAYS_OF_WEEK, type DayOfWeek } from '../types/selectors';
 
-
 interface Props {
     modelValue: DayOfWeek,
 }
@@ -18,11 +17,12 @@ function selectDay(event: Event) {
     const select = event.target as HTMLSelectElement;
     emit('update:modelValue', parseInt(select.value) as DayOfWeek);
 }
-
 </script>
+
 <template>
   <div class="day-selector">
-    <label for="day-select">Day of Week:</label>
+    <span class="material-icons-outlined time-icon icon">access_time</span>
+    <!-- <span class="material-icons-outlined day-icon icon">calendar_today</span> -->
     <select 
       id="day-select" 
       :value="modelValue"
@@ -41,23 +41,26 @@ function selectDay(event: Event) {
 </template>
 
 <style scoped lang="scss">
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+
 .day-selector {
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   
-  label {
-    margin-right: 0.75rem;
-    font-weight: 500;
+  .day-icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    color: #666;
   }
   
   .day-dropdown {
     padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: none; // NOTE: Makes it difficult to recognize these as interactive?
+    // border-radius: 4px;
     font-size: 0.9rem;
     background-color: white;
-    min-width: 150px;
+    min-width: 100px;
     cursor: pointer;
     
     &:focus {

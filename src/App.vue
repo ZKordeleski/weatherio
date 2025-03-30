@@ -1,21 +1,26 @@
 <script setup lang="ts">
-import WeatherTest from './components/WeatherTest.vue';
+import WeatherComparison from './components/WeatherComparison.vue';
 </script>
 
 <template>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <div class="app">
-    <WeatherTest />
+    <WeatherComparison />
   </div>
 </template>
 
 <style>
 body {
-  font-family: Arial, sans-serif;
+  font-family: monospace, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 .app {
   padding: 20px;
+}
+
+.icon {
+  cursor: default;
 }
 </style>

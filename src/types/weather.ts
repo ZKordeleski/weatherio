@@ -5,7 +5,7 @@ export interface WeatherData {
     address: string;
     timezone: string;
     tzoffset: number;
-    description: string;
+    description?: string;
     days: DayWeather[];
     currentConditions?: CurrentConditions;
     alerts?: Alert[];
@@ -33,7 +33,7 @@ export interface DayWeather {
     sunrise?: string;
     sunset?: string;
     moonphase?: number;
-    hours?: HourWeather[];
+    hours: HourWeather[]; // We need to ensure hours is always selected.
 }
 
 export interface HourWeather {
